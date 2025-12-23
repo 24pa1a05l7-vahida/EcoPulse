@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Your Progress</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
 
@@ -28,6 +30,15 @@
       <h3>Total Days Logged</h3>
       <h1 id="totalDays">–</h1>
     </div>
+    <div class="card">
+  <h3>This Week</h3>
+  <canvas id="weeklyChart"></canvas>
+</div>
+
+<div class="card">
+  <h3>Monthly Trend</h3>
+  <canvas id="monthlyChart"></canvas>
+</div>
 
     <div class="card">
       <h3>Best Streak</h3>

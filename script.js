@@ -229,3 +229,54 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("ecoLevelProgress").innerText =
     document.getElementById("ecoLevel")?.innerText || "—";
 });
+/* ================= GRAPHS ================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* WEEKLY GRAPH */
+  const weeklyData = JSON.parse(localStorage.getItem("weeklyEco")) || [9, 11, 10, 8, 7, 6, 8];
+
+  const weeklyCtx = document.getElementById("weeklyChart");
+  if (weeklyCtx) {
+    new Chart(weeklyCtx, {
+      type: "line",
+      data: {
+        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        datasets: [{
+          label: "kg CO₂",
+          data: weeklyData,
+          fill: true,
+          borderColor: "#2e7d32",
+          backgroundColor: "rgba(46,125,50,0.15)",
+          tension: 0.4
+        }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: false } }
+      }
+    });
+  }
+
+  /* MONTHLY GRAPH */
+  const monthlyData = JSON.parse(localStorage.getItem("monthlyEco")) || [62, 58, 54, 50];
+
+  const monthlyCtx = document.getElementById("monthlyChart");
+  if (monthlyCtx) {
+    new Chart(monthlyCtx, {
+      type: "bar",
+      data: {
+        labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
+        datasets: [{
+          label: "kg CO₂",
+          data: monthlyData,
+          backgroundColor: ["#2e7d32", "#43a047", "#66bb6a", "#81c784"]
+        }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  }
+});
