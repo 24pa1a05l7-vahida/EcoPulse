@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoPulse Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="eco-background">
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<nav class="top-nav">
+  <h2>🌱 EcoPulse</h2>
+  <div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="log.html">Log Activity</a>
+    <a href="progress.html">Progress</a>
+    <a href="index.html">Sign Out</a>
+  </div>
+</nav>
+
+<div class="page">
+  <h1>Welcome back!</h1>
+  <p>Your environmental impact summary</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Eco Points</h3>
+      <h1 id="ecoResult">–</h1>
+      <p id="ecoLevel"></p>
+      <div class="eco-meter"><div id="ecoBar"></div></div>
+    </div>
+
+    <div class="card">
+      <h3>🔥 Day Streak</h3>
+      <h1 id="streakText">0 days</h1>
+    </div>
+
+    <div class="card">
+      <h3>🏅 Badge</h3>
+      <h2 id="badgeText">Beginner</h2>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

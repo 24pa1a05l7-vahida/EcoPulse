@@ -1,0 +1,257 @@
+/* ================= GLOBAL ================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  color: #1b3d2f;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ================= BACKGROUND ================= */
+.eco-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 20% 20%, #a5d6a7 0%, transparent 40%),
+    radial-gradient(circle at 80% 30%, #81d4fa 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, #c5e1a5 0%, transparent 40%),
+    linear-gradient(135deg, #e3fdf5, #ffffff, #e8f5e9);
+  background-size: 200% 200%;
+  animation: ecoFlow 12s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.eco-background span {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: rgba(46, 125, 50, 0.3);
+  border-radius: 50%;
+  animation: float 20s linear infinite;
+}
+
+.eco-background span:nth-child(1) { left: 10%; animation-duration: 18s; }
+.eco-background span:nth-child(2) { left: 30%; animation-duration: 22s; }
+.eco-background span:nth-child(3) { left: 50%; animation-duration: 25s; }
+.eco-background span:nth-child(4) { left: 70%; animation-duration: 20s; }
+.eco-background span:nth-child(5) { left: 90%; animation-duration: 28s; }
+
+@keyframes float {
+  0% { top: 110%; opacity: 0; }
+  10% { opacity: 0.4; }
+  100% { top: -10%; opacity: 0; }
+}
+
+@keyframes ecoFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ================= LANDING ================= */
+.landing {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.landing-content {
+  max-width: 600px;
+  padding: 20px;
+}
+
+.pill {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #e8f5e9;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.landing h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.landing h1 span {
+  color: #2e7d32;
+}
+
+.landing p {
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+.landing-buttons button {
+  margin-top: 25px;
+  padding: 14px 26px;
+  font-size: 16px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* ================= LOGIN ================= */
+.login-body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  background: white;
+  padding: 30px;
+  width: 320px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.logo {
+  color: #1b5e20;
+}
+
+.tagline {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #43a047;
+  color: white;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.login-container button.secondary {
+  background: #1b5e20;
+}
+
+/* ================= NAV ================= */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+}
+
+.top-nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+/* ================= PAGE ================= */
+.page {
+  padding: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ================= CARD ================= */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card h2, .card h3 {
+  margin-top: 0;
+}
+
+.card input, .card select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #2e7d32;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* ================= ECO METER ================= */
+.eco-meter {
+  width: 100%;
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+#ecoBar {
+  height: 100%;
+  width: 0%;
+  transition: width 0.6s ease;
+  background: #2e7d32;
+}
+
+/* ================= ECO LEVEL COLORS ================= */
+.eco-bad { color: #c62828; }
+.eco-average { color: #f9a825; }
+.eco-good { color: #2e7d32; }
+.eco-excellent { color: #1b5e20; }
+/* ================= LOG PAGE SIZE FIX ================= */
+
+.log-page {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 0;
+}
+
+.log-page .card {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 18px;
+}
+
+.log-page button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.log-page input,
+.log-page select {
+  font-size: 14px;
+  padding: 10px;
+}

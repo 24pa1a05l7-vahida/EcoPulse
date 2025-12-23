@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Log Activity</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="eco-background">
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<!-- Top Navigation -->
+<nav class="top-nav">
+  <h2>🌱 EcoPulse</h2>
+  <div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="log.html">Log Activity</a>
+    <a href="progress.html">Progress</a>
+  </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<div class="page log-page">
+
+  <!-- TRAVEL CARD -->
+  <div class="card">
+    <h2>🚶 Travel</h2>
+
+    <!-- LOCATION TRIGGER (IMPORTANT) -->
+    <button onclick="requestLocation()" style="margin-bottom:10px;">
+      📍 Use My Current Location
+    </button>
+
+    <input type="text" id="fromPlace" placeholder="From (Home / Office)">
+    <input type="text" id="toPlace" placeholder="To (College / Market)">
+    <input type="number" id="distance" placeholder="Distance (km)">
+
+    <select id="transport">
+      <option value="">Transport mode</option>
+      <option value="walk">Walking</option>
+      <option value="cycle">Bicycle</option>
+      <option value="bike">Bike</option>
+      <option value="car">Car</option>
+      <option value="bus">Bus</option>
+    </select>
+
+    <select id="vehicle">
+      <option value="">Vehicle type</option>
+      <option value="electric">Electric</option>
+      <option value="petrol">Petrol / Diesel</option>
+    </select>
+
+    <img id="vehicleImage"
+         src="https://cdn-icons-png.flaticon.com/512/684/684908.png"
+         alt="Vehicle"
+         style="width:80px;margin:10px auto;display:block;">
+
+    <p id="vehicleTip" style="text-align:center;font-size:13px;"></p>
+
+    <button onclick="saveRoute()">Save Route</button>
+    <small id="distanceMsg"></small>
+  </div>
+
+  <!-- FOOD CARD -->
+  <div class="card">
+    <h2>🍽 Food</h2>
+    <input type="number" id="veg" placeholder="Veg meals">
+    <input type="number" id="nonveg" placeholder="Non-veg meals">
+  </div>
+
+  <!-- ELECTRICITY CARD -->
+  <div class="card">
+    <h2>⚡ Electricity</h2>
+    <input type="number" id="light" placeholder="Light hours">
+    <input type="number" id="fan" placeholder="Fan hours">
+    <input type="number" id="ac" placeholder="AC hours">
+  </div>
+
+  <!-- SAVE BUTTON -->
+  <button onclick="calculateEco()">Save Today’s Activity</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

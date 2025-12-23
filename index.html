@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoPulse</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="eco-background">
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<!-- LANDING PAGE -->
+<div id="landingPage" class="landing">
+  <div class="landing-content">
+    <span class="pill">🌱 Track • Reduce • Earn Rewards</span>
+
+    <h1>Make Every Day <span>Earth-Friendly</span></h1>
+
+    <p>
+      Track your daily carbon footprint, get personalized tips,
+      and earn badges as you become a climate champion.
+    </p>
+
+    <div class="landing-buttons">
+      <button onclick="goToLogin()">Start Your Journey →</button>
+    </div>
+  </div>
+</div>
+
+<!-- LOGIN PAGE -->
+ <div id="loginPage" class="login-body" style="display:none;">
+
+  <div class="login-container">
+    <h1 class="logo">🌱 EcoPulse</h1>
+    <p class="tagline">Track the pulse of your planet</p>
+
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="signup()">Sign Up</button>
+    <button class="secondary" onclick="login()">Log In</button>
+
+    <p id="message"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
